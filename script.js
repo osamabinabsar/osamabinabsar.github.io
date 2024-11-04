@@ -1,5 +1,5 @@
 // Function to handle scroll-based header resizing
-/*
+
 window.addEventListener("scroll", () => {
     const header = document.querySelector("header");
     const headerContent = document.querySelector(".header-content");
@@ -20,8 +20,8 @@ window.addEventListener("scroll", () => {
         headerContent.querySelector("p").style.fontSize = "1em";
     }
 });
-*/
 
+/*
 // Scroll event to toggle header class
 window.addEventListener("scroll", () => {
     const header = document.querySelector("header");
@@ -34,6 +34,7 @@ window.addEventListener("scroll", () => {
         header.classList.remove("minimized");
     }
 });
+*/
 
 // Toggle mobile nav menu
 const hamburgerMenu = document.getElementById("hamburger-menu");
