@@ -1,3 +1,113 @@
+
+/* Basic resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and general styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Header styling */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em 2em;
+    background-color: #333;
+    color: white;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+}
+
+header h1, header p {
+    margin: 0;
+}
+
+header h1 {
+    font-size: 2em;
+    transition: font-size 0.3s ease;
+}
+
+header p {
+    font-size: 1em;
+    transition: font-size 0.3s ease;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+/* Nav links styling */
+#nav-links {
+    display: flex;
+    list-style-type: none;
+}
+
+#nav-links li {
+    margin-left: 1em;
+}
+
+#nav-links li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Hamburger menu (hidden by default) */
+.hamburger {
+    display: none;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* Section styling */
+section {
+    padding: 5em 2em;
+    margin-top: 100px; /* Offset for fixed header */
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+    #nav-links {
+        display: none; /* Hide nav links on mobile */
+    }
+    .hamburger {
+        display: block; /* Show hamburger menu on mobile */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -42,3 +152,5 @@ section {
     border-radius: 8px;
     margin-bottom: 1em;
 }
+
+-->
