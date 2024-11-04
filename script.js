@@ -1,4 +1,5 @@
 // Function to handle scroll-based header resizing
+/*
 window.addEventListener("scroll", () => {
     const header = document.querySelector("header");
     const headerContent = document.querySelector(".header-content");
@@ -17,6 +18,20 @@ window.addEventListener("scroll", () => {
         headerContent.style.alignItems = "flex-start";
         headerContent.querySelector("h1").style.fontSize = "2em";
         headerContent.querySelector("p").style.fontSize = "1em";
+    }
+});
+*/
+
+// Scroll event to toggle header class
+window.addEventListener("scroll", () => {
+    const header = document.querySelector("header");
+
+    if (window.scrollY > 50) {
+        // Add minimized class when scrolled down
+        header.classList.add("minimized");
+    } else {
+        // Remove minimized class when at the top
+        header.classList.remove("minimized");
     }
 });
 
