@@ -69,6 +69,20 @@ nav {
     text-decoration: none;
 }
 
+/* Minimized header styling on scroll */
+header.minimized {
+    padding: 0.5em 2em; /* Smaller padding when scrolled */
+}
+
+header.minimized h1 {
+    font-size: 1.5em; /* Smaller font size for name */
+}
+
+header.minimized p {
+    font-size: 0.8em; /* Smaller font size for description */
+}
+
+
 /* Hamburger menu (hidden by default) */
 .hamburger {
     display: none;
