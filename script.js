@@ -1,5 +1,47 @@
-// Function to handle scroll-based header resizing
+// Typing animation effect
+function typeWriter(element, text, speed = 50) {
+    let i = 0;
+    element.innerHTML = '';
+    function type() {
+        if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+        }
+    }
+    type();
+}
 
+// Smooth scrolling for navigation
+document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const section = document.querySelector(this.getAttribute('href'));
+        section.scrollIntoView({ behavior: 'smooth' });
+    });
+});
+
+// Intersection Observer for section animations
+const sections = document.querySelectorAll('.section');
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.1 });
+
+sections.forEach(section => observer.observe(section));
+
+// Additional animations and functionality can be added here
+
+
+
+
+
+
+// Function to handle scroll-based header resizing
+/*
 window.addEventListener("scroll", () => {
     const header = document.querySelector("header");
     const headerContent = document.querySelector(".header-content");
@@ -35,7 +77,7 @@ window.addEventListener("scroll", () => {
     }
 });
 */
-
+/*
 // Toggle mobile nav menu
 const hamburgerMenu = document.getElementById("hamburger-menu");
 const navLinks = document.getElementById("nav-links");

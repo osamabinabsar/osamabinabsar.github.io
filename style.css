@@ -1,18 +1,120 @@
 
-/* Basic resets */
+
+:root {
+    --terminal-black: #1a1a1a;
+    --terminal-green: #00ff00;
+    --terminal-dim-green: #0a3d0a;
+    --terminal-text: #d4d4d4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', monospace;
+}
+
+body {
+    background-color: #000;
+    color: var(--terminal-text);
+    line-height: 1.6;
+}
+
+.terminal-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    background-color: var(--terminal-black);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.1);
+}
+
+.terminal-header {
+    background-color: #2d2d2d;
+    padding: 0.5rem 1rem;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    align-items: center;
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.terminal-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.close { background-color: #ff5f56; }
+.minimize { background-color: #ffbd2e; }
+.maximize { background-color: #27c93f; }
+
+.terminal-title {
+    margin-left: 1rem;
+    color: var(--terminal-text);
+    font-size: 0.9rem;
+}
+
+nav {
+    background-color: var(--terminal-black);
+    padding: 1rem;
+    border-bottom: 1px solid var(--terminal-dim-green);
+}
+
+nav a {
+    color: var(--terminal-green);
+    text-decoration: none;
+    margin-right: 1.5rem;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--terminal-text);
+}
+
+.section {
+    padding: 2rem;
+    border-bottom: 1px solid var(--terminal-dim-green);
+}
+
+h2 {
+    color: var(--terminal-green);
+    margin-bottom: 1.5rem;
+}
+
+.typing-text {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Add more styles as needed */
+
+
+
+
+
+
+/* Basic resets starslash
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body and general styling */
+/* Body and general styling starslash
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
 }
 
-/* Header styling */
+/* Header styling starslash
 header {
     position: fixed;
     width: 100%;
@@ -54,7 +156,7 @@ nav {
     align-items: center;
 }
 
-/* Nav links styling */
+/* Nav links styling starslash
 #nav-links {
     display: flex;
     list-style-type: none;
@@ -69,40 +171,40 @@ nav {
     text-decoration: none;
 }
 
-/* Minimized header styling on scroll */
+/* Minimized header styling on scroll starslash
 header.minimized {
-    padding: 0.5em 2em; /* Smaller padding when scrolled */
+    padding: 0.5em 2em; /* Smaller padding when scrolled starslash
 }
 
 header.minimized h1 {
-    font-size: 1.5em; /* Smaller font size for name */
+    font-size: 1.5em; /* Smaller font size for name starslash
 }
 
 header.minimized p {
-    font-size: 0.8em; /* Smaller font size for description */
+    font-size: 0.8em; /* Smaller font size for description starslash
 }
 
 
-/* Hamburger menu (hidden by default) */
+/* Hamburger menu (hidden by default) starslash
 .hamburger {
     display: none;
     font-size: 1.5em;
     cursor: pointer;
 }
 
-/* Section styling */
+/* Section styling starslash
 section {
     padding: 5em 2em;
-    margin-top: 100px; /* Offset for fixed header */
+    margin-top: 100px; /* Offset for fixed header starslash
 }
 
-/* Responsive behavior */
+/* Responsive behavior starslash
 @media (max-width: 768px) {
     #nav-links {
-        display: none; /* Hide nav links on mobile */
+        display: none; /* Hide nav links on mobile starslash
     }
     .hamburger {
-        display: block; /* Show hamburger menu on mobile */
+        display: block; /* Show hamburger menu on mobile starslash
     }
 }
 
@@ -168,3 +270,4 @@ section {
 }
 
 -->
+*/
