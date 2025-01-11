@@ -85,3 +85,4 @@ const navLinks = document.getElementById("nav-links");
 hamburgerMenu.addEventListener("click", () => {
     navLinks.style.display = navLinks.style.display === "flex" ? "none" : "flex";
 });
+*/
