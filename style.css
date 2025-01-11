@@ -1,5 +1,3 @@
-
-
 :root {
     --terminal-black: #1a1a1a;
     --terminal-green: #00ff00;
@@ -95,6 +93,95 @@ h2, h3 {
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+.minimize-animation {
+    transform: scale(0.3) translateY(100vh);
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.screensaver {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--terminal-black);
+    color: var(--terminal-green);
+    padding: 2rem;
+    overflow: hidden;
+}
+
+.floating-text {
+    position: absolute;
+    animation: float 20s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes float {
+    0% { transform: translateY(100vh); opacity: 0; }
+    10% { opacity: 0.7; }
+    90% { opacity: 0.7; }
+    100% { transform: translateY(-100vh); opacity: 0; }
+}
+
+.project-card {
+    perspective: 1000px;
+    width: 300px;
+    height: 400px;
+    margin: 1rem;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+
+.project-card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    padding: 1.5rem;
+    background: var(--terminal-black);
+    border: 1px solid var(--terminal-green);
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.skill-category {
+    border: 1px solid var(--terminal-dim-green);
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.certification-item {
+    border-left: 2px solid var(--terminal-green);
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.contact-form {
+    display: grid;
+    gap: 1rem;
+    max-width: 600px;
 }
 
 /* Add more styles as needed */

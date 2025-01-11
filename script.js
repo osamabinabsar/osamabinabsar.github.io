@@ -61,14 +61,87 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.content-section').forEach((section) => {
         observer.observe(section);
     });
+
+    // Terminal minimize functionality
+    const minimizeBtn = document.querySelector('.terminal-button.minimize');
+    const terminalContainer = document.querySelector('.terminal-container');
+    const screensaver = document.querySelector('.screensaver');
+
+    minimizeBtn.addEventListener('click', () => {
+        terminalContainer.classList.add('minimize-animation');
+        setTimeout(() => {
+            terminalContainer.style.display = 'none';
+            screensaver.style.display = 'block';
+            startScreensaver();
+        }, 500);
+    });
+
+    function startScreensaver() {
+        const texts = [
+            "Passionate about cybersecurity since my teenage years...",
+            "Specialized in purple team operations...",
+            "Expert in SIEM implementation and monitoring...",
+            "Conducted numerous penetration tests...",
+            // Add more personal achievements and experiences
+        ];
+
+        setInterval(() => {
+            const text = texts[Math.floor(Math.random() * texts.length)];
+            const elem = document.createElement('div');
+            elem.classList.add('floating-text');
+            elem.style.left = `${Math.random() * 80}vw`;
+            elem.textContent = text;
+            screensaver.appendChild(elem);
+
+            setTimeout(() => elem.remove(), 20000);
+        }, 3000);
+    }
+
+    // Project card flip
+    document.querySelectorAll('.project-card').forEach(card => {
+        card.addEventListener('click', () => {
+            card.classList.toggle('flipped');
+        });
+    });
 });
 
 // Additional animations and functionality can be added here
 
+let isTerminalOpen = true;
 
+function minimizeTerminal() {
+    const terminal = document.querySelector('.terminal');
+    terminal.style.height = '30px';
+    terminal.style.overflow = 'hidden';
+}
 
+function maximizeTerminal() {
+    const terminal = document.querySelector('.terminal');
+    terminal.style.height = '80vh';
+    terminal.style.width = '90vw';
+    terminal.style.overflow = 'auto';
+}
 
+function closeTerminal() {
+    if (confirm('Are you sure you want to close the terminal? You can reopen it by typing "terminal"')) {
+        const terminal = document.querySelector('.terminal');
+        terminal.style.display = 'none';
+        isTerminalOpen = false;
+    }
+}
 
+// Add event listener for document to catch terminal command
+document.addEventListener('keypress', function(e) {
+    if (!isTerminalOpen && e.key === 'Enter') {
+        const input = document.querySelector('#commandInput').value.trim().toLowerCase();
+        if (input === 'terminal') {
+            const terminal = document.querySelector('.terminal');
+            terminal.style.display = 'block';
+            isTerminalOpen = true;
+            document.querySelector('#commandInput').value = '';
+        }
+    }
+});
 
 // Function to handle scroll-based header resizing
 /*
