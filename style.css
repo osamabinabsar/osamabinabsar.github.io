@@ -276,6 +276,38 @@ h2, h3 {
     color: var(--terminal-text);
 }
 
+.skills-tree {
+    font-family: 'Courier New', monospace;
+    padding: 1rem;
+    color: var(--terminal-text);
+}
+
+.skills-tree .folder {
+    color: var(--terminal-green);
+}
+
+.skills-tree .file {
+    color: var(--terminal-text);
+}
+
+.skills-tree .tree-line {
+    padding-left: 2rem;
+    position: relative;
+}
+
+.skills-tree .tree-line::before {
+    content: "├── ";
+    color: var(--terminal-green);
+}
+
+.skills-tree .tree-line:last-child::before {
+    content: "└── ";
+}
+
+.skills-tree .subfolder {
+    padding-left: 2rem;
+}
+
 /* Add more styles as needed */
 
 
