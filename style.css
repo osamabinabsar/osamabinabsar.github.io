@@ -184,6 +184,98 @@ h2, h3 {
     max-width: 600px;
 }
 
+#commandInput {
+    display: none;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background: var(--terminal-black);
+    color: var(--terminal-green);
+    border: 1px solid var(--terminal-dim-green);
+    margin-top: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    background: var(--terminal-black);
+    border: 1px solid var(--terminal-green);
+    color: var(--terminal-text);
+    margin-bottom: 1rem;
+}
+
+.contact-form button {
+    background: var(--terminal-dim-green);
+    color: var(--terminal-green);
+    border: 1px solid var(--terminal-green);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background: var(--terminal-green);
+    color: var(--terminal-black);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    border: 1px solid var(--terminal-green);
+    background: var(--terminal-black);
+    padding: 1rem;
+    position: relative;
+}
+
+.project-card::before {
+    content: ">";
+    color: var(--terminal-green);
+    position: absolute;
+    left: 0.5rem;
+    top: 0.5rem;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.skill-box {
+    border: 1px solid var(--terminal-green);
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.skill-title {
+    color: var(--terminal-green);
+    margin-bottom: 0.5rem;
+}
+
+.skill-bar {
+    height: 20px;
+    background: var(--terminal-dim-green);
+    position: relative;
+    margin-top: 0.5rem;
+}
+
+.skill-progress {
+    height: 100%;
+    background: var(--terminal-green);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.skill-percentage {
+    position: absolute;
+    right: 5px;
+    color: var(--terminal-text);
+}
+
 /* Add more styles as needed */
 
 

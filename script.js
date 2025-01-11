@@ -123,22 +123,23 @@ function maximizeTerminal() {
 }
 
 function closeTerminal() {
-    if (confirm('Are you sure you want to close the terminal? You can reopen it by typing "terminal"')) {
-        const terminal = document.querySelector('.terminal');
-        terminal.style.display = 'none';
-        isTerminalOpen = false;
-    }
+    const terminal = document.querySelector('.terminal-container');
+    const commandInput = document.querySelector('#commandInput');
+    terminal.style.display = 'none';
+    commandInput.style.display = 'block';
+    isTerminalOpen = false;
 }
 
 // Add event listener for document to catch terminal command
 document.addEventListener('keypress', function(e) {
     if (!isTerminalOpen && e.key === 'Enter') {
-        const input = document.querySelector('#commandInput').value.trim().toLowerCase();
-        if (input === 'terminal') {
-            const terminal = document.querySelector('.terminal');
+        const input = document.querySelector('#commandInput');
+        if (input.value.trim().toLowerCase() === 'terminal') {
+            const terminal = document.querySelector('.terminal-container');
             terminal.style.display = 'block';
+            input.style.display = 'none';
+            input.value = '';
             isTerminalOpen = true;
-            document.querySelector('#commandInput').value = '';
         }
     }
 });
