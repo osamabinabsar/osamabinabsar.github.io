@@ -308,6 +308,60 @@ h2, h3 {
     padding-left: 2rem;
 }
 
+.experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.experience-item {
+    border-left: 2px solid var(--terminal-green);
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.experience-item h3 {
+    color: var(--terminal-green);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.experience-item .date {
+    color: var(--terminal-dim-green);
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+.experience-item ul {
+    list-style-type: none;
+    margin-left: 1rem;
+}
+
+.experience-item ul li::before {
+    content: ">";
+    color: var(--terminal-green);
+    margin-right: 0.5rem;
+}
+
+.certification-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.certification-item {
+    border: 1px solid var(--terminal-dim-green);
+    padding: 1rem;
+    border-radius: 4px;
+    background: rgba(0, 255, 0, 0.05);
+}
+
+.certification-item h3 {
+    color: var(--terminal-green);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
 /* Add more styles as needed */
 
 
